@@ -1,0 +1,2 @@
+Name,SMILES,Docking score (kcal/mol),Ligand efficiency
+agan3,c12ccc(cc1C1(CN2C(c2cc(ccc2)S(NC(C)(C)C)(=O)=O)=O)CCC2(CC1)CC2)NS(C)(=O)=O,-8.29,-0.22

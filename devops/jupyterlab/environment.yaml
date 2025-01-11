@@ -1,0 +1,30 @@
+name: agandock
+channels:
+  - nvidia
+  - pytorch
+  - conda-forge
+  - defaults
+  - schrodinger
+dependencies:
+  - python=3.9.15
+  - pytorch
+  - numpy
+  - pandas
+  - scipy
+  - psycopg2
+  - tqdm
+  - seaborn
+  - pip
+  - pip:
+      - jupyterlab
+      - ipywidgets
+      - ipython-sql
+      # - prody
+      # - posebusters
+      # - standardiser
+      # - pygwalker
+      # - py3Dmol
+      # - nglview
+      # - lxml
+      # - stmol==0.0.9
+

@@ -1,0 +1,171 @@
+Uni-Dock v0.1.0
+
+If you used Uni-Dock in your work, please cite:               
+ 
+Yu, Y., Cai, C., Wang, J., Bo, Z., Zhu, Z., & Zheng, H. (2023). 
+Uni-Dock: GPU-Accelerated Docking Enables Ultralarge Virtual Screening. 
+Journal of Chemical Theory and Computation.                    
+https://doi.org/10.1021/acs.jctc.2c01145                       
+
+Tang, S., Chen, R., Lin, M., Lin, Q., Zhu, Y., Ding, J., ... & Wu, J. (2022). 
+Accelerating autodock vina with gpus. Molecules, 27(9), 3041. 
+DOI 10.3390/molecules27093041                                 
+
+J. Eberhardt, D. Santos-Martins, A. F. Tillack, and S. Forli  
+AutoDock Vina 1.2.0: New Docking Methods, Expanded Force      
+Field, and Python Bindings, J. Chem. Inf. Model. (2021)       
+DOI 10.1021/acs.jcim.1c00203                                  
+
+O. Trott, A. J. Olson,                                        
+AutoDock Vina: improving the speed and accuracy of docking    
+with a new scoring function, efficient optimization and        
+multithreading, J. Comp. Chem. (2010)                         
+DOI 10.1002/jcc.21334                                         
+
+Please refer to https://github.com/dptech-corp/Uni-Dock/ for  
+bug reporting, license agreements, and more information.      
+
+Scoring function : vina
+Rigid receptor: /home/agandock_20250104_154837/minD_APO_C1.pdbqt
+Grid center: X -2.18 Y -0.23 Z -10.22
+Grid size  : X 30.09 Y 23.36 Z 27.08
+Grid space : 0.375
+Exhaustiveness: 512
+CPU: 0
+Verbosity: 1
+
+Computing Vina grid ... done.
+Total ligands: 10
+Set GPU device id to 0
+Available Memory = 23818MiB   Total Memory = 24210MiB
+Batch 1 size: 10
+Performing docking (random seed: 1526645524) ... Kernel running time: 1
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -7.335          0          0
+   2         -7.2      1.365       1.78
+   3       -7.191     0.6292      1.328
+   4       -7.128      1.791       2.34
+   5       -6.913        1.2      1.681
+   6       -6.905      1.498      1.875
+   7       -6.831     0.9684      1.294
+   8       -6.806       1.38      2.055
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -7.835          0          0
+   2       -7.715        3.2      8.743
+   3       -7.598      3.232      8.685
+   4       -7.484      3.223      8.739
+   5       -7.309      2.658      4.652
+   6       -7.024      2.789      3.619
+   7       -7.014      1.394      1.812
+   8       -6.977       1.42        1.8
+   9       -6.937      1.639      2.111
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -8.309          0          0
+   2       -8.306     0.5862     0.9881
+   3       -7.666      2.859      4.338
+   4       -7.563      2.967      4.288
+   5       -7.552      5.235      10.17
+   6        -7.48      2.584      3.256
+   7       -7.447      5.461      10.35
+   8       -7.412      3.137       3.92
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -7.147          0          0
+   2       -6.973      2.825      4.133
+   3       -6.952      1.109      1.501
+   4       -6.883      1.844      2.527
+   5       -6.822      1.465      1.879
+   6        -6.79      1.101      1.195
+   7       -6.742      1.318      2.012
+   8       -6.734      5.605      8.788
+   9       -6.702      5.705      8.811
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -8.295          0          0
+   2       -8.164      2.537      3.624
+   3       -8.108      4.765      8.184
+   4       -7.796      2.363       3.52
+   5       -7.722       2.05        8.5
+   6       -7.657      2.407      8.564
+   7        -7.65      4.829      7.943
+   8       -7.517      4.819      8.308
+   9       -7.342      2.776      8.834
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -7.897          0          0
+   2       -7.789      2.492      2.827
+   3       -7.747      4.919      9.421
+   4       -7.625      2.195       3.46
+   5       -7.619      2.473       3.57
+   6       -7.582      3.422      4.388
+   7        -7.51      1.181      1.318
+   8       -7.314      5.129      9.508
+   9       -7.228      1.175      1.651
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -8.045          0          0
+   2       -7.815      2.667      5.118
+   3       -7.733      1.368      1.546
+   4       -7.714      1.422      1.707
+   5       -7.387      1.888      2.772
+   6       -7.312      2.834      5.391
+   7        -7.11      3.364       5.92
+   8       -7.108      2.054      2.789
+   9       -7.079      2.311      3.082
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -8.032          0          0
+   2       -7.873      5.728      9.613
+   3       -7.835      1.011      1.229
+   4       -7.712      5.585      9.547
+   5       -7.688     0.7287       1.38
+   6       -7.575      2.563      3.112
+   7       -7.433      5.537      9.523
+   8        -7.38      5.914      9.592
+   9       -7.338      2.189      2.972
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -7.521          0          0
+   2       -7.411      1.057      1.748
+   3       -7.135      2.654      3.346
+   4       -7.126      1.824      2.655
+   5       -7.125      3.026      4.298
+   6       -7.071      2.769      4.052
+   7       -7.054      5.276      8.735
+   8       -6.995      3.006      4.489
+   9       -6.906      2.421      3.515
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -7.955          0          0
+   2       -7.823     0.7504      1.189
+   3       -7.803     0.9125      1.005
+   4       -7.624      2.651      3.854
+   5       -7.315      2.554      3.678
+   6       -7.274      2.287      3.614
+   7       -7.258      2.516      3.517
+   8       -7.237      2.413      3.562
+   9       -6.953      2.285      3.442
+Batch 1 running time: 3206ms

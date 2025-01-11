@@ -1,0 +1,10 @@
+C1(=C([C]=[C]C(=[C]1)NS(=O)(=O)[C][C]O)C(=O)NC1=[C]C(=[C][C]=[C]1)N1[C][C]C([C][C]1)(F)F)N1[C][C]C2([C][C]1)[C][C]2	agan2
+C1(=C([C]=C([C]=[C]1)NS(=O)(=O)[C][C]O)N1[C][C]C2([C][C]2)[C][C]1)C(=O)NC1=[C]C(=NC(=N1)N1[C][C]C([C][C]1)(F)F)[C]	agan1
+C1(=C([C]=C([C]=[C]1)NS(=O)(=O)[C][C]O)N1[C][C]C2([C][C]1)[C][C]2)c1nc2c(s1)[C]=[C][C]=C2N1[C][C]C([C][C]1)(F)F	agan10
+C12=C([C]=C([C]=C1N=[C]N=C2NC1=[C][C]=[C]C(=[C]1)[C])NS(=O)(=O)[C][C]O)N1[C][C]C2([C][C]1)[C][C]2	agan9
+C12=C(N=[C]N=C1[C]=C([C]=C2N1[C][C]C2([C][C]1)[C][C]2)NS(=O)(=O)[C][C]O)NC1=[C]C(=[C]C(=[C]1)N1[C][C]C([C][C]1)(F)F)[C]	agan5
+C1(=[C][C]=C([C]=C1[C]1[C][C]C2([C][C]1)[C][C]2)NS(=O)(=O)[C][C]O)C(=O)NC1=NC(=NC(=[C]1)[C])N1[C][C]C([C][C]1)(F)F	agan7
+C1(=C([C]=C([C]=[C]1)NS(=O)(=O)[C][C]O)N1[C][C]C2([C][C]1)[C][C]2)c1sc2=C([C]=[C][C]=c2n1)N1[C][C]C([C][C]1)(F)F	agan6
+C1(=[C][C]=C([C]=C1N1[C][C]C2([C][C]1)[C][C]2)NS(=O)(=O)[C][C]O)C1=[C][C]=NC(=[C]1)N1[C][C]C([C][C]1)(F)F	agan8
+C12=[C][C]=C([C]=C1C1([C]N2C(=O)C2=[C][C]=[C]C(=[C]2)S(=O)(=O)NC([C])([C])[C])[C][C]C2([C][C]1)[C][C]2)NS(=O)(=O)[C]	agan3
+C1(=C(N=[C]C(=N1)NC([C])([C])[C]O)C(=O)NC1=NC(=[C][C]=[C]1)S(=O)(=O)NC([C])([C])[C])N1[C][C]C2([C][C]1)[C][C]2	agan4

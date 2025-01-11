@@ -1,0 +1,11 @@
+Name,SMILES,Docking score (kcal/mol),Ligand efficiency
+agan1,CC1=CC(=NC(=N1)N2CCC(CC2)(F)F)NC(=O)C3=C(C=C(C=C3)NS(=O)(=O)CCO)N4CCC5(CC5)CC4,-8.31,-0.21
+agan3,c12ccc(cc1C1(CN2C(c2cc(ccc2)S(NC(C)(C)C)(=O)=O)=O)CCC2(CC1)CC2)NS(C)(=O)=O,-8.29,-0.22
+agan2,c1(c(ccc(c1)NS(CCO)(=O)=O)C(Nc1cccc(c1)N1CCC(CC1)(F)F)=O)N1CCC2(CC1)CC2,-8.04,-0.21
+agan5,c12c(cc(cc1N1CCC3(CC1)CC3)NS(CCO)(=O)=O)ncnc2Nc1cc(cc(c1)N1CCC(CC1)(F)F)C,-8.03,-0.20
+agan6,c1(ccc(cc1N1CCC2(CC1)CC2)NS(CCO)(=O)=O)-c1sc2c(n1)cccc2N1CCC(CC1)(F)F,-7.96,-0.21
+agan7,c1(ccc(cc1C1CCC2(CC1)CC2)NS(CCO)(=O)=O)C(Nc1cc(nc(n1)N1CCC(CC1)(F)F)C)=O,-7.90,-0.20
+agan4,c1(c(ncc(n1)NC(CO)(C)C)C(Nc1cccc(n1)S(NC(C)(C)C)(=O)=O)=O)N1CCC2(CC1)CC2,-7.83,-0.21
+agan10,c1(ccc(cc1N1CCC2(CC1)CC2)NS(CCO)(=O)=O)-c1nc2c(s1)cccc2N1CCC(CC1)(F)F,-7.52,-0.20
+agan9,c12c(cc(cc1N1CCC3(CC1)CC3)NS(CCO)(=O)=O)ncnc2Nc1cccc(c1)C,-7.33,-0.22
+agan8,c1(ccc(cc1N1CCC2(CC1)CC2)NS(CCO)(=O)=O)-c1cc(ncc1)N1CCC(CC1)(F)F,-7.15,-0.20

@@ -1,0 +1,37 @@
+services:
+  jupyterlab:
+    build:
+      context: ./jupyterlab
+      dockerfile: Dockerfile
+    image: ${JP_IMAGE}
+    container_name: ${JP_CONTAINER}
+    ports:
+      - "${JP_PORT}:7777"
+    volumes:
+      - "../main:/home"
+    labels:
+      - "description=Jupyterlab for UltraDock"
+      - "port=7777"
+    networks:
+      - ultradock
+
+  streamlit:
+    build:
+      context: ./streamlit
+      dockerfile: Dockerfile
+    image: ${SL_IMAGE}
+    container_name: ${SL_CONTAINER}
+    ports:
+      - "${SL_PORT}:8501"
+    volumes:
+      - "../main/streamlit:/home"
+    shm_size: "8g" 
+    labels:
+      - "description=Streamlit App for UltraDock"
+      - "port=8501"
+    networks:
+      - ultradock
+
+networks:
+  ultradock:
+    driver: bridge
