@@ -110,6 +110,8 @@ Once you are inside Jupyterlab container, you have to execute four notebooks to 
 
 2. ![#FFDB58](https://via.placeholder.com/15/FFDB58/FFDB58.png) `Extract protein + ligand in pdb format for PLIP Analysis`: Mention the folder name and csv path from where you want to extract data and also the number of files to extract. The code converts PDBQT files to PDB format and then zips a specified number of these converted files along with a protein structure file. It reads a CSV file to get the top compounds, converts their corresponding PDBQT files from pipeline_files/8_pdbqt_out_threshold_m1 to PDB format, and appends the protein's ATOM lines to these PDB files. The converted files are temporarily stored in a new directory (pdbqt_extracted). Finally, the code creates a ZIP archive containing these PDB files and deletes the temporary directory. This process ensures that the top num_files PDB files, along with the protein structure, are efficiently packaged into a ZIP archive for easy distribution or further analysis.
 
+![Ultradock PNG](devops/ultradock.png)
+
 ### Execution time
 Virtual screening will take approximately 26 hrs for 1 million compounds if a system is having 32 cores CPU and Nvidia GeForce RTX 4090 GPU.
 
@@ -122,37 +124,6 @@ Virtual screening will take approximately 26 hrs for 1 million compounds if a sy
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-
-# Filteration Pipeline
-The Filtration Pipeline is a comprehensive solution designed to streamline the filtering of molecular compounds through distinct processes tailored for FRAG, SMOL, and PROTAC. This pipeline features steps such as loading and cleaning data, removing salts and duplicates, applying molecular descriptor and catalog filters, and eliminating unwanted ring structures. Each step meticulously refines the dataset, ensuring only the most relevant compounds are retained. Visual flowcharts enhance understanding by mapping out the entire filtration workflow. This pipeline is essential for efficient and effective molecular compound analysis, providing clear, step-by-step instructions to achieve high-quality results.
-
-![Filteration PNG](devops/filtration_image.png)
-
-## Pipeline Instruction
-In filtration, there are three separate pipelines for FRAG, SMOL, and PROTAC. All these pipelines are identical except for step 4: Molecular Descriptor Filtration.
-
-### Step by step explanation of "5_frag_filteration" notebook:
-1. ![#00FFFF](https://via.placeholder.com/15/00FFFF/00FFFF.png) `Load Data`: The code reads a CSV file from the frag_filteration folder, which contains compound names and SMILES strings. It then selects only the columns with the compound names and SMILES strings, renames these columns to 'Name' and 'SMILES' respectively, and displays the first few rows and the shape of the DataFrame before and after the renaming. This process ensures that only the relevant columns are retained and properly labeled for further analysis.
-
-2. ![#00FFFF](https://via.placeholder.com/15/00FFFF/00FFFF.png) `Remove Salts`: This step processes a DataFrame to remove salts from SMILES strings. It converts each SMILES string to a molecule, breaks bonds, neutralizes it, and filters out nonorganic and salt fragments. The cleaned fragments are then recombined into a new SMILES string, standardized, and any errors during this process are handled.
-
-3. ![#00FFFF](https://via.placeholder.com/15/00FFFF/00FFFF.png) `Remove Duplicates`: The code defines a function process_smiles_dataframe to clean a DataFrame by canonicalizing SMILES strings and removing duplicates based on canonical SMILES and InChI keys. It deep copies the DataFrame, resets its index, canonicalizes SMILES, and removes duplicates. The function prints the number of removed and remaining data points, and returns the cleaned DataFrame and the final count. This function is then applied to df_remove_salts, storing the cleaned DataFrame and counts in df_duplicates and after_duplicates_count.
-
-4. ![#00FFFF](https://via.placeholder.com/15/00FFFF/00FFFF.png) `Molecular Descriptor Filteration`: The code defines a function frag_calculate_and_filter_properties to calculate molecular properties for each SMILES string and filter compounds based on defined thresholds. It computes properties like molecular weight, cLogP, HBA, HBD, and NRotB, then filters compounds meeting specific criteria. The function prints the number of removed and remaining data points, returning the filtered DataFrame and the final count. This function is applied to df_duplicates, resulting in df_filtered and after_filter_properties.
-
-5. ![#00FFFF](https://via.placeholder.com/15/00FFFF/00FFFF.png) `RDKit Catalog Filteration`: This step defines a function catalog_filter to filter compounds based on various catalog filters such as PAINS, NIH, ZINC, and others. It checks each SMILES string against these catalogs, removes compounds with matches, and returns the filtered DataFrame and the final count. The function prints the number of removed and remaining data points, and saves the intermediate results to a CSV file. This function is applied to df_filtered, resulting in df_catlog and after_catlog_filter.
-
-6. ![#00FFFF](https://via.placeholder.com/15/00FFFF/00FFFF.png) `Remove rings with consecutive heteroatoms`: If the flag execute_remove_rings_with_consecutive_heteroatoms is set to true, the function remove_rings_with_consecutive_heteroatoms is applied to df_catlog to filter out compounds containing rings with three consecutive heteroatoms. The function checks each SMILES string, removes compounds with such rings, and returns the filtered DataFrame and the final count. If the flag is false, the original DataFrame df_catlog is used without additional filtering. The function prints the number of removed and remaining data points, resulting in df_con_het and after_consecutive_het_atoms.
-
-7. ![#00FFFF](https://via.placeholder.com/15/00FFFF/00FFFF.png) `Remove max three conjugated fused rings`: The code defines a function remove_max_three_conjugated_fused_rings that filters out compounds with more than three conjugated fused rings. It checks each SMILES string, identifies fused rings with double bonds, and retains compounds with three or fewer such rings. The function prints the number of removed and remaining data points, returning the filtered DataFrame and the final count. This function is applied to df_con_het, resulting in df_conj_rings and after_conjugated_fused.
-
-8. ![#00FFFF](https://via.placeholder.com/15/00FFFF/00FFFF.png) `Remove rings with more than seven members`: The code defines a function remove_rings_with_more_than_seven_members that filters out compounds containing rings with more than seven members. It checks each SMILES string for such rings and removes the corresponding compounds. The filtered DataFrame is saved to output_filteration.csv, and the function prints the number of removed and remaining data points. This function is applied to df_conj_rings, resulting in df_final and after_remove_seven_member.
-
-9. ![#00FFFF](https://via.placeholder.com/15/00FFFF/00FFFF.png) `Filteration Flowchart`: The code defines a function create_flowchart to visualize the filtration process. It calculates the reduction in compound counts at each step, creates a flowchart using graphviz, and labels each node with the step name and compound count. The flowchart includes steps like removing salts, duplicates, filtering by molecular descriptors, catalog filtration, and removing specific ring structures. The final flowchart is saved as a PNG file in the specified folder, summarizing the filtration workflow.
-
-![Filtration Flowchart](devops/Filtration_flowchart_output.png)
-
 
 ## Author
 
